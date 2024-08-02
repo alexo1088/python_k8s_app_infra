@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+  namespace: gitops-multienv
+  labels:
+    app: website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - name: website
+        image: ${IMAGE}
+        securityContext:
+          privileged: true
+        env:
+        - name : NODE_ENV
+          value : "test"
+        - name : WEBSITE_PORT
+          value : "3000"
+        ports:
+        - containerPort: 3000
+          name: website
