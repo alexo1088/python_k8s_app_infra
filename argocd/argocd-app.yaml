@@ -12,7 +12,7 @@ spec:
     path: argocd/overlays/${NAMESPACE}
   destination: 
     server: ${SERVER}
-    namespace: python_app
+    namespace: python-app
 
   syncPolicy:
     syncOptions:

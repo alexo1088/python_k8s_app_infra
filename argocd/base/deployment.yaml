@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: website
-  namespace: gitops-multienv
+  namespace: python-app
   labels:
     app: website
 spec:
