@@ -12,7 +12,7 @@ spec:
     path: argocd/overlays/${NAMESPACE}
   destination: 
     server: ${SERVER}
-    namespace: gitops-multienv
+    namespace: python_app
 
   syncPolicy:
     syncOptions:
